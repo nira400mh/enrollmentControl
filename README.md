@@ -17,8 +17,8 @@
    - このuserId(長い英数字の文字列)をコピーしてパソコンで見れるメール（Gmailなど）に送っておきます。（気合で記憶してもいいですが間違っていると通知されません。
 
 ## 2. 実行プログラムの準備
-1. このページ右側のリリースのところから **「履修空き通知監視_v2.zip」** をダウンロードしてzipファイルを展開します。
-   - 履修空き通知監視_v2.zip
+1. このページ右側のリリースのところから **「Risyu-kanshi_v2.0.0.zip」** をダウンロードしてzipファイルを展開します。(パスワードは別途教えます）
+   - Risyu-kanshi_v2.0.0.zip
      | ファイル名 | 用途 |
      | ----------| ---- |
      |env/line.env|LINE通知用の設定ファイル。環境によっては「line」表示されているかも|
@@ -31,7 +31,7 @@
        こんな感じになっていればOK
        <img width="723" height="227" alt="image" src="https://github.com/user-attachments/assets/242fb85c-70e8-46b6-b36a-c705e39f7cf1" />
 
-2. envフォルダ内のline.envをメモ帳などで開いて、手順0と手順1でパソコンのメールに送っておいたTOKENとuserIdを以下の部分にコピペします。
+3. envフォルダ内のline.envをメモ帳などで開いて、手順0と手順1でパソコンのメールに送っておいたTOKENとuserIdを以下の部分にコピペします。
    > LINE_CHANNEL_ACCESS_TOKEN=ここに別途通知されたTOKENを貼り付け  
    > LINE_TARGET_USER_ID=ここに履修空き通知ﾈｺが教えてくれたuserIdを貼り付け
   
@@ -39,10 +39,10 @@
        LINE_CHANNEL_ACCESS_TOKENは長いのでこんな感じにメモ帳で勝手に改行されるけど気にしない
        <img width="697" height="131" alt="image" src="https://github.com/user-attachments/assets/f4acc6b1-baa4-4043-96a9-7ed423581ec1" />
 
-3. LINEへの通知確認のため、line_check.exeを実行します。
+4. LINEへの通知確認のため、line_check.exeを実行します。
    1. 履修空き通知ﾈｺから、LINEメッセージが通知されたら成功です。
    2. 通知されなかった場合、手順2-2の設定がおかしいかもしれません。見直してください。
-4. Run.batをメモ帳などで開いて、以下「--tab_a_url "〇〇"」の〇〇を監視したいURLに書き換えます。IDとパスワードも自分のIDとパスに書き変えます。
+5. Run.batをメモ帳などで開いて、以下「--tab_a_url "〇〇"」の〇〇を監視したいURLに書き換えます。IDとパスワードも自分のIDとパスに書き変えます。
     > @echo off  
     > cd /d "%~dp0"  
     >enrollmentControl.exe --tab-a-url "https://xxxxxxx/rishu/capacity_state/xxxxx"  --id "your_id" --password "your_password"  
@@ -51,7 +51,7 @@
    **`補足`**：  
    --tab-a-urlに指定するのは上のサンプルのように`「capacity_state/～～」というURLを指定`してください。空いている枠が表示されるあのページです。
     
-5. これで準備完了です。
+6. これで準備完了です。
 
 # 実行方法
 1. Run.bat ダブルクリックすると、履修空きの監視が開始されます。
